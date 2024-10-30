@@ -63,14 +63,11 @@ public class Simplf {
 
         List<Stmt> statements = parser.program().val;
 
-        //System.out.println("Original program:");
-        //print_program(statements);
+ 
 
         List<Stmt> desugared_statements = 
             (new Desugar()).desugar(statements);
 
-        //System.out.println("Desugared program:");
-        //print_program(desugared_statements);
 
         interpreter.interpret(desugared_statements);
     }
